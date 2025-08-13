@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpjusaonsrwe8"]
+
+[ext_resource type="Texture2D" uid="uid://c4b7sqyclxpt4" path="res://track/Background_Tiles/Grass_Tile.png" id="1_l0r8y"]
+[ext_resource type="Texture2D" uid="uid://clneqle1bg72u" path="res://track/Road_01/Road_01_Tile_04/Layers/Road_Main.png" id="1_nsmob"]
+[ext_resource type="Texture2D" uid="uid://bp7ew5hsuboxv" path="res://track/Road_01/Road_01_Tile_04/Layers/Road_Side_01.png" id="2_l0r8y"]
+[ext_resource type="Texture2D" uid="uid://cmc0puebrpcdy" path="res://track/Road_01/Road_01_Tile_04/Layers/Road_Side_02.png" id="3_dx0ep"]
+[ext_resource type="Texture2D" uid="uid://chcrkiqj7onsp" path="res://cars/pitstop_car_2.png" id="4_qylwf"]
+
+[node name="Race" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(1770, -78)
+texture = ExtResource("1_l0r8y")
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 5000)
+
+[node name="RoadStart" type="Sprite2D" parent="."]
+position = Vector2(727, -26)
+scale = Vector2(3, -1.51522)
+texture = ExtResource("1_nsmob")
+
+[node name="Sprite2D" type="Sprite2D" parent="RoadStart"]
+position = Vector2(1.74998, 295.455)
+texture = ExtResource("2_l0r8y")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RoadStart"]
+position = Vector2(-1.52588e-05, -286.364)
+texture = ExtResource("3_dx0ep")
+
+[node name="Road1" type="Sprite2D" parent="."]
+position = Vector2(2259, -26)
+scale = Vector2(3, -1.5)
+texture = ExtResource("1_nsmob")
+
+[node name="Sprite2D" type="Sprite2D" parent="Road1"]
+position = Vector2(1.74998, 295.455)
+texture = ExtResource("2_l0r8y")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Road1"]
+position = Vector2(-1.52588e-05, -289.394)
+texture = ExtResource("2_l0r8y")
+
+[node name="Road2" type="Sprite2D" parent="."]
+position = Vector2(3795, -18)
+scale = Vector2(3, -1.5)
+texture = ExtResource("1_nsmob")
+
+[node name="Sprite2D" type="Sprite2D" parent="Road2"]
+position = Vector2(1.74998, 295.455)
+texture = ExtResource("2_l0r8y")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Road2"]
+position = Vector2(-1.52588e-05, -289.394)
+texture = ExtResource("2_l0r8y")
+
+[node name="Car" type="Sprite2D" parent="."]
+position = Vector2(747, -37)
+rotation = -1.5708
+texture = ExtResource("4_qylwf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1867, -30)
+scale = Vector2(10.48, 10.8)
+skew = 0.190241
+zoom = Vector2(0.1, 0.1)
