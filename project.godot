@@ -11,6 +11,10 @@ config_version=5
 [application]
 
 config/name="New Game Project"
-run/main_scene="uid://dtfr1hna01isy"
+run/main_scene="uid://bpjusaonsrwe8"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/always_on_top=true
