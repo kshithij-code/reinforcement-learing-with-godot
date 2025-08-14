@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5xquv7mmr1b2"]
+
+[ext_resource type="Texture2D" uid="uid://cp13nrman0wb1" path="res://track/Road_01/Road_01_Tile_02/Road_01_Tile_02.png" id="1_davwy"]
+[ext_resource type="Script" uid="uid://b0vuen5s2kuhm" path="res://road_sides.gd" id="2_25k3i"]
+
+[node name="Turn" type="Sprite2D"]
+rotation = 1.5708
+scale = Vector2(1.49461, 1.63731)
+texture = ExtResource("1_davwy")
+
+[node name="TurnHitBox" type="Area2D" parent="."]
+script = ExtResource("2_25k3i")
+metadata/_custom_type_script = "uid://b0vuen5s2kuhm"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TurnHitBox"]
+polygon = PackedVector2Array(-250.9, 296.829, -345.908, 298.051, -315.393, 80.0103, -181.58, -146.581, 16.7256, -285.835, 184.401, -334.696, 294.798, -344.468, 295.728, -251.633, 182.395, -244.303, 48.1723, -194.832, -98.3538, -87.338, -207.003, 78.1777, -241.126, 174.067)

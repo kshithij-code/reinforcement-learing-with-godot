@@ -1,22 +1,29 @@
-[gd_scene load_steps=12 format=3 uid="uid://bpjusaonsrwe8"]
+[gd_scene load_steps=14 format=3 uid="uid://bpjusaonsrwe8"]
 
 [ext_resource type="Texture2D" uid="uid://c4b7sqyclxpt4" path="res://track/Background_Tiles/Grass_Tile.png" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://col03k0j4cxbt" path="res://fetch_and_simulate.gd" id="1_kek77"]
 [ext_resource type="Texture2D" uid="uid://clneqle1bg72u" path="res://track/Road_01/Road_01_Tile_04/Layers/Road_Main.png" id="2_kek77"]
 [ext_resource type="Texture2D" uid="uid://bp7ew5hsuboxv" path="res://track/Road_01/Road_01_Tile_04/Layers/Road_Side_01.png" id="3_4c57u"]
-[ext_resource type="Script" uid="uid://b0vuen5s2kuhm" path="res://road_sides.gd" id="4_efxa6"]
 [ext_resource type="Texture2D" uid="uid://cmc0puebrpcdy" path="res://track/Road_01/Road_01_Tile_04/Layers/Road_Side_02.png" id="5_dg77c"]
+[ext_resource type="PackedScene" uid="uid://ct5tohqeqyut7" path="res://road_hit_box.tscn" id="5_efxa6"]
 [ext_resource type="Texture2D" uid="uid://chcrkiqj7onsp" path="res://cars/pitstop_car_2.png" id="6_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://bj1jmfrvm8ylp" path="res://road.tscn" id="7_dg77c"]
 [ext_resource type="Script" uid="uid://bgmjnoydenioj" path="res://car_controls.gd" id="7_w48qg"]
-[ext_resource type="Script" uid="uid://byqrbtw3dextd" path="res://MyHitBox.gd" id="8_vivmo"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_suetu"]
+[ext_resource type="Script" uid="uid://byqrbtw3dextd" path="res://CarHitBox.gd" id="8_vivmo"]
+[ext_resource type="PackedScene" uid="uid://c5xquv7mmr1b2" path="res://turn.tscn" id="9_dg77c"]
+[ext_resource type="Texture2D" uid="uid://dylkw68fpovkl" path="res://track/Decor/Start.png" id="10_dg77c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bysv8"]
-size = Vector2(10.9595, 75.6185)
+size = Vector2(10.9595, 75.3548)
 
 [node name="Race" type="Node2D"]
 script = ExtResource("1_kek77")
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(1867, -30)
+scale = Vector2(10.48, 10.8)
+skew = 0.190241
+zoom = Vector2(0.1, 0.1)
 
 [node name="background" type="Sprite2D" parent="."]
 texture_repeat = 2
@@ -35,33 +42,25 @@ texture = ExtResource("2_kek77")
 position = Vector2(1.74998, 295.455)
 texture = ExtResource("3_4c57u")
 
-[node name="RoadHitBox" type="Area2D" parent="RoadStart/Sprite2D"]
-script = ExtResource("4_efxa6")
-metadata/_custom_type_script = "uid://b0vuen5s2kuhm"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RoadStart/Sprite2D/RoadHitBox"]
-scale = Vector2(25.6313, 4.90642)
-shape = SubResource("RectangleShape2D_suetu")
+[node name="RoadHitBox" parent="RoadStart/Sprite2D" instance=ExtResource("5_efxa6")]
 
 [node name="Sprite2D2" type="Sprite2D" parent="RoadStart"]
 position = Vector2(-1.52588e-05, -286.364)
 texture = ExtResource("5_dg77c")
 
-[node name="Road1" type="Sprite2D" parent="."]
+[node name="RoadHitBox" parent="RoadStart/Sprite2D2" instance=ExtResource("5_efxa6")]
+
+[node name="Road1" parent="." instance=ExtResource("7_dg77c")]
 position = Vector2(2259, -26)
-scale = Vector2(3, -1.5)
-texture = ExtResource("2_kek77")
 
-[node name="Sprite2D" type="Sprite2D" parent="Road1"]
-position = Vector2(1.74998, 295.455)
-texture = ExtResource("3_4c57u")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Road1"]
-position = Vector2(-1.52588e-05, -289.394)
-texture = ExtResource("3_4c57u")
+[node name="Start" type="Sprite2D" parent="."]
+position = Vector2(1411.56, -19.6086)
+rotation = 1.5708
+scale = Vector2(0.507914, 0.74366)
+texture = ExtResource("10_dg77c")
 
 [node name="Road2" type="Sprite2D" parent="."]
-position = Vector2(3795, -18)
+position = Vector2(3792, -25.6102)
 scale = Vector2(3, -1.5)
 texture = ExtResource("2_kek77")
 
@@ -69,13 +68,25 @@ texture = ExtResource("2_kek77")
 position = Vector2(1.74998, 295.455)
 texture = ExtResource("3_4c57u")
 
+[node name="RoadHitBox" parent="Road2/Sprite2D" instance=ExtResource("5_efxa6")]
+
 [node name="Sprite2D2" type="Sprite2D" parent="Road2"]
 position = Vector2(-1.52588e-05, -289.394)
 texture = ExtResource("3_4c57u")
 
+[node name="RoadHitBox" parent="Road2/Sprite2D2" instance=ExtResource("5_efxa6")]
+
+[node name="Road3" parent="." instance=ExtResource("7_dg77c")]
+position = Vector2(5053, 1182)
+rotation = 1.5708
+scale = Vector2(3, -1.62811)
+
+[node name="Turn" parent="." instance=ExtResource("9_dg77c")]
+position = Vector2(5046, -23.6102)
+
 [node name="Car" type="Sprite2D" parent="."]
 position = Vector2(747, -37)
-rotation = -1.58571
+rotation = -1.5708
 texture = ExtResource("6_ycdy4")
 script = ExtResource("7_w48qg")
 
@@ -84,15 +95,10 @@ script = ExtResource("8_vivmo")
 metadata/_custom_type_script = "uid://byqrbtw3dextd"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Car/CarHitBox"]
-position = Vector2(-0.948883, -11.9335)
+position = Vector2(-0.948887, -13.8792)
 scale = Vector2(33.6717, -13.0829)
 shape = SubResource("RectangleShape2D_bysv8")
 
 [node name="Camera2D" type="Camera2D" parent="Car"]
-zoom = Vector2(0.5, 0.5)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1867, -30)
-scale = Vector2(10.48, 10.8)
-skew = 0.190241
-zoom = Vector2(0.1, 0.1)
+enabled = false
+zoom = Vector2(0.3, 0.3)

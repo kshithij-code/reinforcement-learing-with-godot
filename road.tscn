@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj1jmfrvm8ylp"]
+
+[ext_resource type="Texture2D" uid="uid://clneqle1bg72u" path="res://track/Road_01/Road_01_Tile_04/Layers/Road_Main.png" id="1_bpeel"]
+[ext_resource type="Texture2D" uid="uid://bp7ew5hsuboxv" path="res://track/Road_01/Road_01_Tile_04/Layers/Road_Side_01.png" id="2_twbfo"]
+[ext_resource type="PackedScene" uid="uid://ct5tohqeqyut7" path="res://road_hit_box.tscn" id="3_ocm6w"]
+
+[node name="Road1" type="Sprite2D"]
+scale = Vector2(3, -1.5)
+texture = ExtResource("1_bpeel")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.74998, 295.455)
+texture = ExtResource("2_twbfo")
+
+[node name="RoadHitBox" parent="Sprite2D" instance=ExtResource("3_ocm6w")]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-1.52588e-05, -289.394)
+texture = ExtResource("2_twbfo")
+
+[node name="RoadHitBox" parent="Sprite2D2" instance=ExtResource("3_ocm6w")]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct5tohqeqyut7"]
+
+[ext_resource type="Script" uid="uid://b0vuen5s2kuhm" path="res://road_sides.gd" id="1_alvya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_suetu"]
+
+[node name="RoadHitBox" type="Area2D"]
+script = ExtResource("1_alvya")
+metadata/_custom_type_script = "uid://b0vuen5s2kuhm"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(25.6313, 4.90642)
+shape = SubResource("RectangleShape2D_suetu")

@@ -17,7 +17,6 @@ func _physics_process(delta: float) -> void:
 
 	# Forward/backward
 	if Input.is_action_pressed("ui_up"):
-		print(position)
 		move_dir -= 1.0
 	if Input.is_action_pressed("ui_down"):
 		move_dir += 1.0
