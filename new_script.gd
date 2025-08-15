@@ -7,7 +7,7 @@ func _ready():
 	box = $MeshInstance3D
 	ws.connect_to_url("ws://localhost:8765")
 
-func _process(delta: float):
+func _process(_delta: float):
 	# Poll the WebSocket
 	ws.poll()
 

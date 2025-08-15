@@ -43,6 +43,7 @@ position = Vector2(1.74998, 295.455)
 texture = ExtResource("3_4c57u")
 
 [node name="RoadHitBox" parent="RoadStart/Sprite2D" instance=ExtResource("5_efxa6")]
+position = Vector2(-0.333328, 0.659973)
 
 [node name="Sprite2D2" type="Sprite2D" parent="RoadStart"]
 position = Vector2(-1.52588e-05, -286.364)
