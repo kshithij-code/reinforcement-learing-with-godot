@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://bpjusaonsrwe8"]
+[gd_scene load_steps=13 format=3 uid="uid://bpjusaonsrwe8"]
 
 [ext_resource type="Texture2D" uid="uid://c4b7sqyclxpt4" path="res://track/Background_Tiles/Grass_Tile.png" id="1_5vw27"]
-[ext_resource type="Script" uid="uid://col03k0j4cxbt" path="res://fetch_and_simulate.gd" id="1_kek77"]
 [ext_resource type="Texture2D" uid="uid://clneqle1bg72u" path="res://track/Road_01/Road_01_Tile_04/Layers/Road_Main.png" id="2_kek77"]
 [ext_resource type="Texture2D" uid="uid://bp7ew5hsuboxv" path="res://track/Road_01/Road_01_Tile_04/Layers/Road_Side_01.png" id="3_4c57u"]
 [ext_resource type="Texture2D" uid="uid://cmc0puebrpcdy" path="res://track/Road_01/Road_01_Tile_04/Layers/Road_Side_02.png" id="5_dg77c"]
@@ -17,7 +16,6 @@
 size = Vector2(10.9595, 75.3548)
 
 [node name="Race" type="Node2D"]
-script = ExtResource("1_kek77")
 
 [node name="Camera2D2" type="Camera2D" parent="."]
 position = Vector2(1867, -30)
@@ -103,3 +101,7 @@ shape = SubResource("RectangleShape2D_bysv8")
 [node name="Camera2D" type="Camera2D" parent="Car"]
 enabled = false
 zoom = Vector2(0.3, 0.3)
+
+[node name="RayCast2D" type="RayCast2D" parent="Car"]
+position = Vector2(179, -43.9993)
+target_position = Vector2(247, -1.99915)

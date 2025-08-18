@@ -11,10 +11,10 @@ func _init() -> void:
 
 func _ready():
 	area_entered.connect(_on_area_entered)
-	#print("%f %f"%[position.x,position.y])
 	ws.connect_to_url("ws://localhost:8765")
 
 func _process(_delta: float) -> void:
+	
 	ws.poll()
 	if ws.get_ready_state()==WebSocketPeer.STATE_OPEN:
 		var pos="%f %f"%[position.x,position.y]
@@ -23,6 +23,9 @@ func _process(_delta: float) -> void:
 		var msg=ws.get_packet().get_string_from_utf8()
 		print(msg)
 
+func _exit_tree() -> void:
+	if ws.get_ready_state()==WebSocketPeer.STATE_OPEN:
+		ws.close()
 
 func _on_area_entered(other_area: Area2D) -> void:
 	print("CarHitBox: entered by", other_area.name)
